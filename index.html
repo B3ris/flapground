@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flap Ground</title>
+  <style>
+    
+    .fullscreen-button {
+      background-color: #4CAF50; 
+      border: none;
+      color: white; 
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2; 
+    }
+
+    
+    .title {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      position: fixed;
+      top: calc(50% - 100px); 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2; 
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    
+    body {
+      background-color: #B2EBF2; 
+      margin: 0;
+      padding: 0;
+    }
+
+    
+    .gif {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; 
+    }
+    
+    
+    .by-text {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="title">Flap Ground</div>
+  <button class="fullscreen-button" onclick="startGame()">Oyuna Başla</button>
+
+  
+  <img class="gif" src="https://media.tenor.com/CMkD8MSaJb8AAAAC/jumpscare.gif" alt="GIF görüntüsü">
+
+  <!-- By: B16ris / b12sea -->
+  <div class="by-text">By: B16ris / b12sea</div>
+
+  
+  <audio id="audio">
+    <source src="Sesler/jump.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Oyuna başlama işlemini gerçekleştiren fonksiyon
+    function startGame() {
+      
+      var titleElement = document.querySelector('.title');
+      titleElement.style.display = 'none';
+      var buttonElement = document.querySelector('.fullscreen-button');
+      buttonElement.style.display = 'none';
+
+      
+      var bodyElement = document.querySelector('body');
+      bodyElement.style.backgroundColor = 'transparent';
+
+      
+      var gifElement = document.querySelector('.gif');
+      gifElement.style.display = 'block';
+
+      
+      var audioElement = document.getElementById('audio');
+      audioElement.play();
+    }
+    
+    
+    function playSound() {
+      var audioElement = document.getElementById('audio');
+      audioElement.play();
+    }
+  </script>
+</body>
+</html>
